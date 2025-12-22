@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UKS PANCA MARGA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: verdana;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            /* Mencegah scroll vertikal jika konten pas di layar */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Tetap Konsisten */
+        .navigasi {
+            background-color: #ffffff; 
+            width: 100%;
+            height: 70px;
+            color: rgb(16, 16, 16);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo h2 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 30px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #090909;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Banner Section - Diperbaiki agar pas di layar */
+        .benner {
+            background-color: #1E8449;
+            flex: 1; /* Mengisi sisa ruang yang tersedia antara header dan footer */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 70px; /* Offset untuk header fixed */
+        }
+
+        .logo-tengah {
+            display: flex;
+            align-items: center;
+            gap: 40px; /* Jarak antar logo diperlebar */
+            margin-bottom: 20px;
+        }
+
+        /* Ukuran Logo Diperbesar Kembali */
+        .logo-uks {
+            width: 350px; 
+            height: auto;
+        }
+
+        .logo-univ {
+            width: 280px;
+            height: auto;
+        }
+
+        .benner h1 {
+            color: white;
+            font-size: 26px;
+            margin-top: 10px;
+        }
+
+        .benner h2 {
+            color: white;
+            font-size: 18px;
+            height: 30px;
+            margin-top: 5px;
+        }
+
+        .benner button {
+            margin-top: 25px;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+            color: #1E8449;
+            transition: 0.3s;
+        }
+
+        .benner button:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        /* Animasi Teks */
+        h2 span:before {
+            content: "";
+            animation: gerak infinite 8s ease;
+        }
+
+        @keyframes gerak {
+            0%, 30% { content: 'YUK BERSAMA KAMI'; }
+            35%, 65% { content: 'Menggapai Hidup Sehat Di Kampus'; }
+            70%, 100% { content: 'Menjaga Kesehatan Menjaga Prestasi'; }
+        }
+
+        /* Footer nempel di bawah tanpa ruang berlebih */
+        .main-footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 26px;
+            color: #333;
+            font-size: 13px;
+            border-top: 1px solid #ddd;
+        }
+
+        .main-footer a {
+            color: #1E8449;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navigasi">
+        <div class="logo">
+            <h2>UKS PANCA MARGA</h2>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="homepage.html" style="color: #1E8449;">Home</a></li>
+                <li><a href="data_obat.html">Data Obat</a></li>
+                <li><a href="pasien.html">Data Pasien</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="benner">
+        <div class="logo-tengah">
+            <img src="upm2.png" class="logo-univ" alt="Logo UPM">
+            <img src="uks1.png" class="logo-uks" alt="Logo UKS">
+        </div>
+
+        <h1>UNIVERSITAS PANCA MARGA PROBOLINGGO</h1>
+        <h2><span></span></h2>
+
+        <a href="selengkapnya.html">
+            <button>Read More</button>
+        </a>
+    </div>
+
+    <footer class="main-footer">
+        <strong>Unit Kesehatan Sekolah &copy; 2025 <a href="#">Panca Marga Prob</a>.</strong> All rights reserved.
+    </footer>
+
+</body>
+</html>
