@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Obat - UKS Panca Marga</title>
+    <style>
+        :root {
+            --hijau-utama: #1a8244; /* Warna hijau khas dari banner */
+            --hijau-muda: #e8f5e9;
+            --putih: #ffffff;
+            --teks-gelap: #333;
+            --merah-peringatan: #d32f2f;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: var(--teks-gelap);
+        }
+
+        /* Header / Navigasi */
+        header {
+            background-color: var(--putih);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+            color: var(--teks-gelap);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--teks-gelap);
+            margin-left: 20px;
+            font-weight: 600;
+        }
+
+        nav a.active {
+            color: var(--hijau-utama);
+        }
+
+        /* Hero Section Kecil */
+        .page-title {
+            background-color: var(--hijau-utama);
+            color: white;
+            padding: 1px 8%;
+            text-align: center;
+        }
+
+        /* Container Tabel */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--hijau-utama);
+            padding-left: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th {
+            background-color: var(--hijau-utama);
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background-color: var(--hijau-muda);
+        }
+
+        /* Badge Status */
+        .badge {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-ready { background: #c8e6c9; color: #256029; }
+        .status-low { background: #ffecb3; color: #856404; }
+        .status-empty { background: #ffcdd2; color: #c62828; }
+
+        .btn-tambah {
+            background-color: var(--hijau-utama);
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 13px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>UKS PANCA MARGA</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="data_obat.html" class="active">Data Obat</a>
+            <a href="pasien.html">Data Pasien</a>
+        </nav>
+    </header>
+
+    <div class="page-title">
+        <h1>Inventaris Obat-Obatan UKS</h1>
+        <p>Manajemen stok obat untuk pelayanan kesehatan warga kampus</p>
+    </div>
+
+    <div class="container">
+        <div class="table-header">
+            <h2>Daftar Stok Obat</h2>
+            <a href="#" class="btn-tambah">+ Tambah Obat</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Obat</th>
+                    <th>Kategori</th>
+                    <th>Jumlah (Stok)</th>
+                    <th>Satuan</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Paracetamol</td>
+                    <td>Demam/Panas</td>
+                    <td>45</td>
+                    <td>Tablet</td>
+                    <td><span class="badge status-ready">Tersedia</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Antasida Doen</td>
+                    <td>Obat Lambung</td>
+                    <td>8</td>
+                    <td>Tablet</td>
+                    <td><span class="badge status-low">Hampir Habis</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Betadine 30ml</td>
+                    <td>Antiseptik</td>
+                    <td>12</td>
+                    <td>Botol</td>
+                    <td><span class="badge status-ready">Tersedia</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Promag</td>
+                    <td>Obat Lambung</td>
+                    <td>20</td>
+                    <td>Tablet</td>
+                    <td><span class="badge status-ready">Tersedia</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Kasa Steril</td>
+                    <td>Peralatan Medis</td>
+                    <td>0</td>
+                    <td>Box</td>
+                    <td><span class="badge status-empty">Kosong</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+   <footer>
+        Usaha Kesehatan Sekolah &copy; 2025 <a href="#" style="color: var(--hijau-utama); text-decoration: none; font-weight: bold;">Panca Marga Prob.</a> All rights reserved.
+    </footer>
+
+</body>
+</html>  
+
