@@ -1,0 +1,184 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* =====================
+   WARNA UTAMA
+===================== */
+:root {
+    --hijau-utama: #1E8449;
+    --hijau-muda: #e8f5e9;
+    --putih: #ffffff;
+    --teks-gelap: #333;
+}
+
+/* =====================
+   HEADER / NAVIGASI
+===================== */
+.main-header {
+    background-color: var(--putih);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-header h1 {
+    font-size: 20px;
+    margin: 0;
+    color: var(--teks-gelap);
+}
+
+.main-header nav a {
+    text-decoration: none;
+    color: var(--teks-gelap);
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.main-header nav a.active {
+    color: var(--hijau-utama);
+}
+
+/* =====================
+   BANNER (INDEX)
+===================== */
+.benner {
+    background-color: var(--hijau-utama);
+    min-height: calc(100vh - 110px);
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.logo-tengah {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-univ {
+    width: 280px;
+    height: auto;
+}
+
+.logo-uks {
+    width: 350px;
+    height: auto;
+}
+
+.benner h1 {
+    color: white;
+    font-size: 26px;
+    margin-top: 10px;
+}
+
+.benner h2 {
+    color: white;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.benner button {
+    margin-top: 25px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: var(--hijau-utama);
+    transition: 0.3s;
+}
+
+.benner button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* =====================
+   PAGE TITLE (DATA OBAT / PASIEN)
+===================== */
+.page-title {
+    background-color: var(--hijau-utama);
+    color: white;
+    padding: 20px 8%;
+    text-align: center;
+    margin-top: 80px; /* offset header */
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* =====================
+   TABLE
+===================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: var(--hijau-utama);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background-color: var(--hijau-muda);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 13px;
+    border-top: 1px solid #ddd;
+}
+
+footer a {
+    color: var(--hijau-utama);
+    font-weight: bold;
+    text-decoration: none;
+}
