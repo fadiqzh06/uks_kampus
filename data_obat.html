@@ -208,8 +208,57 @@
    <footer>
         Usaha Kesehatan Sekolah &copy; 2025 <a href="#" style="color: var(--hijau-utama); text-decoration: none; font-weight: bold;">Panca Marga Prob.</a> All rights reserved.
     </footer>
+    <script>
+function tambahObat() {
+    const nama = prompt("Nama Obat:");
+    if (!nama) return;
+
+    const kategori = prompt("Kategori Obat:");
+    if (!kategori) return;
+
+    const jumlah = prompt("Jumlah Stok:");
+    if (jumlah === null || jumlah === "") return;
+
+    const satuan = prompt("Satuan:");
+    if (!satuan) return;
+
+    const statusInput = prompt(
+        "Pilih Status:\n1. Tersedia\n2. Hampir Habis\n3. Kosong\n\nMasukkan angka:"
+    );
+
+    let statusClass, statusText;
+
+    if (statusInput == "1") {
+        statusClass = "status-ready";
+        statusText = "Tersedia";
+    } else if (statusInput == "2") {
+        statusClass = "status-low";
+        statusText = "Hampir Habis";
+    } else if (statusInput == "3") {
+        statusClass = "status-empty";
+        statusText = "Kosong";
+    } else {
+        alert("Status tidak valid!");
+        return;
+    }
+
+    const tbody = document.querySelector("#obatTable tbody");
+    const nomor = tbody.rows.length + 1;
+
+    const row = tbody.insertRow();
+    row.innerHTML = `
+        <td>${nomor}</td>
+        <td>${nama}</td>
+        <td>${kategori}</td>
+        <td>${jumlah}</td>
+        <td>${satuan}</td>
+        <td><span class="badge ${statusClass}">${statusText}</span></td>
+    `;
+}
+</script>
 
 </body>
 </html>  
+
 
 
