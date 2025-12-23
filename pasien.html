@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pasien - UKS Panca Marga</title>
+    <style>
+        :root {
+            --hijau-utama: #1a8244;
+            --hijau-muda: #e8f5e9;
+            --putih: #ffffff;
+            --teks-gelap: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI',Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: var(--teks-gelap);
+        }
+
+        /* ===== HEADER / NAVIGASI ===== */
+        header {
+            background-color: var(--putih);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--teks-gelap);
+            margin-left: 20px;
+            font-weight: 600;
+        }
+
+        nav a.active {
+            color: var(--hijau-utama);
+        }
+
+        /* ===== PAGE TITLE ===== */
+        .page-title {
+            background-color: var(--hijau-utama);
+            color: white;
+            padding: 1px 8%;
+            text-align: center;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--hijau-utama);
+            padding-left: 15px;
+        }
+
+        input[type="text"] {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 220px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background-color: var(--hijau-utama);
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background-color: var(--hijau-muda);
+        }
+
+        .badge-sakit {
+            background: #ffcdd2;
+            color: #c62828;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .badge-sembuh {
+            background: #c8e6c9;
+            color: #256029;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 13px;
+            border-top: 1px solid #ddd;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UKS PANCA MARGA</h1>
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="data_obat.html">Data Obat</a>
+        <a href="pasien.html" class="active">Data Pasien</a>
+    </nav>
+</header>
+
+<div class="page-title">
+    <h1>Data Pasien UKS</h1>
+    <p>Pencatatan pasien dan riwayat kesehatan warga kampus</p>
+</div>
+
+<div class="container">
+    <div class="table-header">
+        <h2>Daftar Pasien</h2>
+        <input type="text" id="searchInput" placeholder="Cari nama pasien...">
+    </div>
+
+    <table id="pasienTable">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Pasien</th>
+                <th>Keluhan</th>
+                <th>Kebutuhan Obat</th>
+                <th>Tanggal</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Andi Saputra</td>
+                <td>Panas</td>
+                <td>Paracetamol</td>
+                <td>12-08-2025</td>
+                <td><span class="badge-sembuh">Sembuh</span></td>
+                <td>
+                    <div class="aksi">
+                        <a href="#" class="icon-edit" title="Edit" onclick="editPasien(this)">✏️</a>
+                        <a href="#" class="icon-hapus" title="Hapus" onclick="hapusPasien(this)">🗑️</a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Siti Aisyah</td>
+                <td>Maag</td>
+                <td>Promag</td>
+                <td>03-09-2025</td>
+                <td><span class="badge-sakit">Sakit</span></td>
+                <td>
+                    <div class="aksi">
+                        <a href="#" class="icon-edit" title="Edit" onclick="editPasien(this)">✏️</a>
+                        <a href="#" class="icon-hapus" title="Hapus" onclick="hapusPasien(this)">🗑️</a>
+                    </div>
+                </td>
+            </tr>
+
+              <tr>
+                <td>3</td>
+                <td>Nicola</td>
+                <td>Diare</td>
+                <td>Oralit</td>
+                <td>18-10-2025</td>
+                <td><span class="badge-sakit">Sakit</span></td>
+                <td>
+                    <div class="aksi">
+                        <a href="#" class="icon-edit" title="Edit" onclick="editPasien(this)">✏️</a>
+                        <a href="#" class="icon-hapus" title="Hapus" onclick="hapusPasien(this)">🗑️</a>
+                    </div>
+                </td>
+            </tr>
+
+              <tr>
+                <td>4</td>
+                <td>Shelma</td>
+                <td>Nyeri Haid</td>
+                <td>Asam Menefamat</td>
+                <td>14-11-2025</td>
+                <td><span class="badge-sakit">Sakit</span></td>
+                <td>
+                    <div class="aksi">
+                        <a href="#" class="icon-edit" title="Edit" onclick="editPasien(this)">✏️</a>
+                        <a href="#" class="icon-hapus" title="Hapus" onclick="hapusPasien(this)">🗑️</a>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Bima</td>
+                <td>Luka Ringan</td>
+                <td>Betadine dan Kasa Steril</td>
+                <td>21-12-2025</td>
+                <td><span class="badge-sembuh">Sembuh</span></td>
+                <td>
+                    <div class="aksi">
+                        <a href="#" class="icon-edit" title="Edit" onclick="editPasien(this)">✏️</a>
+                        <a href="#" class="icon-hapus" title="Hapus" onclick="hapusPasien(this)">🗑️</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    Usaha Kesehatan Sekolah &copy; 2025 <b style="color: var(--hijau-utama);">Panca Marga Prob.</b>
+</footer>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const rows = document.querySelectorAll('#pasienTable tbody tr');
+
+    searchInput.addEventListener('keyup', () => {
+        const filter = searchInput.value.toLowerCase();
+        rows.forEach(row => {
+            const name = row.children[1].textContent.toLowerCase();
+            row.style.display = name.includes(filter) ? '' : 'none';
+        });
+    });
+</script>
+
+<script>
+function editPasien(el) {
+    const row = el.closest("tr");
+    const cells = row.querySelectorAll("td");
+
+    // jika sedang mode edit → simpan
+    if (el.innerText === "💾") {
+        for (let i = 1; i <= 4; i++) {
+            const input = cells[i].querySelector("input");
+            if (input) {
+                cells[i].innerText = input.value;
+            }
+        }
+
+        el.innerText = "✏️";
+        el.title = "Edit";
+        return;
+    }
+
+    // ubah ke input (edit inline)
+    for (let i = 1; i <= 4; i++) {
+        const text = cells[i].innerText;
+        cells[i].innerHTML = `<input type="text" value="${text}" style="width:100%">`;
+    }
+
+    el.innerText = "💾";
+    el.title = "Simpan";
+}
+
+function hapusPasien(el) {
+    const row = el.closest("tr");
+    const nama = row.children[1].innerText;
+
+    if (confirm("Yakin ingin menghapus data pasien:\n" + nama + " ?")) {
+        row.remove();
+        updateNomor();
+        alert("Data pasien berhasil dihapus!");
+    }
+}
+
+function updateNomor() {
+    const rows = document.querySelectorAll("#pasienTable tbody tr");
+    rows.forEach((row, index) => {
+        row.children[0].innerText = index + 1;
+    });
+}
+</script>
+
+
+
+</body>
+</html>
