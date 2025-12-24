@@ -38,6 +38,17 @@ body {
     width: 100%;
     z-index: 1000;
 }
+  h2 span:before {
+            content: "";
+            animation: gerak infinite 8s ease;
+        }
+
+        @keyframes gerak {
+            0%, 30% { content: 'YUK BERSAMA KAMI'; }
+            35%, 65% { content: 'Menggapai Hidup Sehat Di Kampus'; }
+            70%, 100% { content: 'Menjaga Kesehatan Menjaga Prestasi'; }
+        }
+
 
 .main-header h1 {
     font-size: 20px;
@@ -182,3 +193,4 @@ footer a {
     font-weight: bold;
     text-decoration: none;
 }
+
